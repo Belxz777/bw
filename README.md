@@ -1,6 +1,10 @@
-# clockwork ⏱
+# bw ⏱
 
-Минималистичный CLI трекер времени на Bun.js. Нет базы данных, нет зависимостей — только JSON файл в `~/.clockwork/data.json`.
+Минималистичный CLI трекер времени на Bun.js.
+
+Нет базы данных — только JSON файл в `~/.clockwork/data.json`.
+
+__0__ стороних библиотек только bun js
 
 ## Установка
 
@@ -12,54 +16,79 @@ cd clockwork
 bun index.ts
 
 # или скомпилировать в бинарник
-bun build index.ts --compile --outfile=cw
-sudo mv cw /usr/local/bin/cw
+bun build index.ts --compile --outfile=bw
+sudo mv bw /usr/local/bin/bw
 ```
 
 ## Быстрый старт
-
+> Иногда необходимо запускать через bun например bun bw 
 ```bash
 # запустить задачу
-bun cw start "Design system refactor" --tag=work --est=90
+bw new 
 
 # живые часы + прогресс
-bun cw
+bw
 
 # остановить
-bun cw stop
+bw stop
 
 # отчёт за неделю
-bun cw report
+bw report
 
 # лог сегодня
-bun cw log
+bw log
 ```
 
 ## Команды
 
 | Команда | Описание |
 |---|---|
-| `bun cw` | Живые часы + активная задача |
-| `bun cw start [name]` | Начать задачу (интерактивный ввод если без args) |
-| `bun cw stop` | Остановить |
-| `bun cw pause / resume` | Пауза |
-| `bun cw status` | Статус активной задачи |
-| `bun cw log` | Лог за сегодня |
-| `bun cw log --week` | Лог за неделю |
-| `bun cw report` | Отчёт с ASCII-барами по тегам |
-| `bun cw report --month` | За месяц |
-| `bun cw add "Task" --tag=work --dur=45 --at=09:00` | Добавить ручную запись |
-| `bun cw goal set 8h` | Установить дневную цель |
-| `bun cw export --csv` | Экспорт в CSV (stdout) |
-| `bun cw export --json` | Экспорт в JSON |
+| `bun bw` | Живые часы + активная задача |
+| `bun bw start [name]` | Начать задачу (интерактивный ввод если без args) |
+| `bun bw stop` | Остановить |
+| `bun bw pause / resume` | Пауза |
+| `bun bw status` | Статус активной задачи |
+| `bun bw log` | Лог за сегодня |
+| `bun bw log --week` | Лог за неделю |
+| `bun bw report` | Отчёт с ASCII-барами по тегам |
+| `bun bw report --month` | За месяц |
+| `bun bw add "Task" --tag=work --dur=45 --at=09:00` | Добавить ручную запись |
+| `bun bw goal set 8h` | Установить дневную цель |
+| `bun bw export --csv` | Экспорт в CSV (stdout) |
+| `bun bw export --json` | Экспорт в JSON |
 
 ## Теги
 
-`work` · `personal` · `study` · `health` · `other`
+`работа` · `учеба` · `чилл` · `другое`
+> Это теги по умолчанию - можно добавить собственные: 
+```bash 
+
+bw tag list
+
+bun run index.ts tag add <имя> design --color=<цвет> --icon=<эмоджи>
+
+```
+## Цвета:
+- reset: - отступ  
+- bold:  - жирный
+- dim:   - блеклый
+- green:  
+- yellow: 
+- blue:  
+- cyan:  
+- white: 
+- gray:   
+- red:   
+- magenta
 
 ## Данные
 
-Всё хранится в `~/.clockwork/data.json`. Можно бэкапить, синхронизировать через Dropbox/iCloud, открывать в любом редакторе.
+Всё хранится в `~/.clockwork/data.json`
+
+Можно бэкапить, синхронизировать через Dropbox/iCloud, открывать в любом редакторе.
+
+```bash
 bun test                   # все тесты
 bun test --watch           # следит за изменениями файлов
-bun test --coverage        # покрытие
+bun test --coverage        # покрытие 
+```

@@ -4,7 +4,6 @@ import type { Store, Task } from "../types";
 
 const DIR = process.env.CW_DATA_DIR ?? join(homedir(), ".clockwork");
 const FILE = join(DIR, "data.json");
-console.log("CW_DATA_DIR =", process.env.CW_DATA_DIR);
 const DEFAULT: Store = { history: [], goals: { dailyHours: 4 } };
 
 export async function readStore(): Promise<Store> {
