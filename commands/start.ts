@@ -4,9 +4,10 @@ import { stdin as input, stdout as output } from "process";
 import { readStore, writeStore, makeId } from "../lib/store";
 import { c, colorTag } from "../lib/format";
 import type { Task } from "../types";
+import { readConfig } from "../lib/conf";
 
-const TAGS = ["работа", "личное", "учеба", "другое"];
-
+const config = await readConfig();
+const TAGS = Object.keys(config.tags);  // ["работа", "личное", ...]
 export async function cmdStart(args: string[]) {
   const store = await readStore();
 

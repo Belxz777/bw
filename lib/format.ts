@@ -12,7 +12,16 @@ export const c = {
   red:    "\x1b[31m",
   magenta:"\x1b[35m",
 };
-
+export const ANSI: Record<string, string> = {
+  red:     c.red,
+  green:   c.green,
+  yellow:  c.yellow,
+  blue:    c.blue,
+  magenta: c.magenta,
+  cyan:    c.cyan,
+  gray:    c.gray,
+  white:   c.white,
+};
 export const TAG_COLORS: Record<string, string> = {
   work:     c.blue,
   personal: c.magenta,

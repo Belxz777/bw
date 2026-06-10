@@ -6,6 +6,8 @@ import { cmdReport } from "./commands/report";
 import { cmdClock } from "./commands/clock";
 import { cmdAdd, cmdGoal, cmdExport } from "./commands/misc";
 import { c } from "./lib/format";
+import { cmdConfig } from "./config";
+import { cmdTag } from "./commands/tags";
 
 const [,, cmd = "", ...args] = process.argv;
 
@@ -47,6 +49,8 @@ switch (cmd) {
   case "add":     await cmdAdd(args);          break;
   case "goal":    await cmdGoal(args);         break;
   case "export":  await cmdExport(args);       break;
+  case "config": await cmdConfig(args);         break;
+  case "tag": await cmdTag(args);         break;
   case "--help":
   case "help":
   case "-h":      console.log(HELP);           break;
