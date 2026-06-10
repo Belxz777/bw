@@ -60,3 +60,6 @@ bun cw log
 ## Данные
 
 Всё хранится в `~/.clockwork/data.json`. Можно бэкапить, синхронизировать через Dropbox/iCloud, открывать в любом редакторе.
+bun test                   # все тесты
+bun test --watch           # следит за изменениями файлов
+bun test --coverage        # покрытие

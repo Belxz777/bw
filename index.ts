@@ -12,27 +12,27 @@ import { cmdTag } from "./commands/tags";
 const [,, cmd = "", ...args] = process.argv;
 
 const HELP = `
-${c.bold}${c.cyan}clockwork${c.reset} — terminal time tracker
+${c.bold}${c.cyan}bw${c.reset} — terminal time tracker (made by belx777)
 
-${c.bold}Usage:${c.reset}
-  ${c.green}bun cw${c.reset}                     live clock + active task
-  ${c.green}bun cw new${c.reset} [name]        start a new task timer
-  ${c.green}bun cw stop${c.reset}                stop current task
-  ${c.green}bun cw pause${c.reset}               pause current task
-  ${c.green}bun cw resume${c.reset}              resume paused task
-  ${c.green}bun cw status${c.reset}              show active task
+${c.bold}Помощь:${c.reset}
+  ${c.green}bun bw${c.reset}                     живое время + активная задача
+  ${c.green}bun bw new${c.reset} [name]          создать новую задачу
+  ${c.green}bun bw stop${c.reset}                остановить текущую задачу
+  ${c.green}bun bw pause${c.reset}               приостановить время на задаче
+  ${c.green}bun bw resume${c.reset}              запустить время вновь
+  ${c.green}bun bw status${c.reset}              посмотреть активную задачу
 
-  ${c.green}bun cw log${c.reset}                 today's log
-  ${c.green}bun cw log --week${c.reset}          this week's log
-  ${c.green}bun cw report${c.reset}              weekly report with tag breakdown
-  ${c.green}bun cw report --month${c.reset}      monthly report
+  ${c.green}bun bw log${c.reset}                 журнал задач на сегодня
+  ${c.green}bun bw log --week${c.reset}          недельный журнал
+  ${c.green}bun bw report${c.reset}              недельный отчет по задачам
+  ${c.green}bun bw report --month${c.reset}      месячный отчет 
 
-  ${c.green}bun cw add${c.reset} "name" [opts]   add manual entry
+  ${c.green}bun bw add${c.reset} "имя" [opts]   добавить задачу вручную
     ${c.dim}--tag=work  --dur=45  --at=09:00${c.reset}
 
-  ${c.green}bun cw goal set 8h${c.reset}         set daily hour goal
-  ${c.green}bun cw export --csv${c.reset}        export to CSV
-  ${c.green}bun cw export --json${c.reset}       export to JSON
+  ${c.green}bun bw goal set 8h${c.reset}         дневная цель по работе
+  ${c.green}bun bw export --csv${c.reset}        экспорт в csv(db)
+  ${c.green}bun bw export --json${c.reset}       экспорт в json 
 `;
 
 switch (cmd) {
@@ -55,6 +55,6 @@ switch (cmd) {
   case "help":
   case "-h":      console.log(HELP);           break;
   default:
-    console.log(`${c.red}Unknown command: ${cmd}${c.reset}\nRun ${c.cyan}bun cw help${c.reset}`);
+    console.log(`${c.red}Unknown command: ${cmd}${c.reset}\nRun ${c.cyan}bun bw help${c.reset}`);
     process.exit(1);
 }
