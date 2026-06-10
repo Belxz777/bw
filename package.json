@@ -1,13 +1,13 @@
 {
-  "name": "clockwork",
+  "name": "bw",
   "version": "1.0.0",
   "description": "Terminal time tracker for productivity",
   "type": "module",
   "bin": {
-    "cw": "./index.ts"
+    "bw": "./index.ts"
   },
   "scripts": {
     "dev": "bun run index.ts",
-    "build": "bun build index.ts --compile --outfile=cw"
+    "build": "bun build index.ts --compile --outfile=bw"
   }
 }
